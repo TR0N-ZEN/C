@@ -46,6 +46,7 @@ int advanced() {
     for (int x = 0; x < 10; x++) {
         pointerarray[x] = pointer_on_string;
         pointer_on_string++;
+        printf("%d\n",pointer_on_string);
     };
     char* pointer;
     for (int x = 0; x < 10; x++) {
@@ -56,6 +57,8 @@ int advanced() {
     };
     printf("You typed (pointer resolution):\t%s\n", text);
     /**/
+    int integer;
+    scanf("%i", &integer);
     system("PAUSE");
     return 0;
 };
