@@ -13,12 +13,12 @@ int main(){
     enum { Mo, Di, Mi, Do, Fr, Sa, So } Tag5;
     enum { Mo, Di, Mi, Do, Fr, Sa, So } Tag6;
     //
-    Tag1 = Mo;
-    Tag2 = Di;
-    Tag3 = Mi;
-    Tag4 = Do;
-    Tag5 = Fr;
-    Tag6 = Sa;
+    Tag1 = Mo; // is equal to the integer value 0
+    Tag2 = Di; // ----------------------------- 1
+    Tag3 = Mi; //------------------------------ 2
+    Tag4 = Do; //------------------------------ 3
+    Tag5 = Fr; //------------------------------ 4
+    Tag6 = Sa; //------------------------------ 5
     printf("%d\n", So);
     scanf("%d", &a); //a is a variable holding an integer. &a is the memory address of the varible and so the adress of the value it holds
     return 0;
