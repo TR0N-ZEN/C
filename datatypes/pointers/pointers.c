@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -8,25 +9,27 @@ int string_recovery(); // Declared but not defined/initialised. But since it is 
 
 void pause() {
     printf ( "Press [Enter] to continue..." );
-    fflush ( stdout );
-    getchar();
+    //fflush ( stdout );
+    //getchar();
+    char c1;
+    scanf("%c", &c1);
 }
 
 int give_a() {
     return a;
-};
+}
 
 int* give_pointer_a() {
     return &a;
-};
+}
 
 int* give_pointer_b() {
     return b;
-};
+}
 
 int give_value_pointer_b_points_at() {
     return *b;
-};
+}
 
 void pointer_demo() {
     printf("START:\t'pointer_demo'");
@@ -35,14 +38,20 @@ void pointer_demo() {
     printf("END:\t'pointer_demo'");
 }
 
+
+
+
 int main() {
     printf("START:\t'main'");
     pause();
+    pointer_demo();
+    pause();
     string_recovery();
+    pause();
     printf("END:\t'main'");
     pause();
     return 0;
-};
+}
 
 void string_recovery() {
     printf("START:\t'string_recovery'");
@@ -71,4 +80,4 @@ void string_recovery() {
     printf("You typed (pointer resolution):\t%s\n", text);
     /**/
     printf("END:\t'string_recovery'");
-};
+}

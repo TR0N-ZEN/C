@@ -12,9 +12,9 @@ int main() {
     z = function1(x,y);
     printf("%f",z);
     return 0;
-};
+}
 
 //defining a function <=> saying what a function does
 float function1(float(x),float(y)) {
      return x*y;
-};
+}
