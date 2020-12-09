@@ -17,14 +17,14 @@ typedef struct elements {
 } element;
 
 element element0;
-element element_before;
+element* p_element_before;
 
 void append_element(int(number)) {
-    element new_element;
-    element_before.pointer_to_next_element = &new_element;
-    new_element.number = number;
-    new_element.pointer_to_next_element = NULL;
-    element_before = new_element;
+    element* p_new_element = (element*) malloc(sizeof(element));
+    p_element_before->pointer_to_next_element = p_new_element;
+    p_new_element->number = number;
+    p_new_element->pointer_to_next_element = NULL;
+    p_element_before = p_new_element;
 }
 
 void extending_list() {
@@ -40,9 +40,9 @@ void extending_list() {
 int main() {
     element0.number = 0;
     printf("%i\n", element0.number);
-    element_before = element0;
+    p_element_before = &element0;
     append_element(1);
-    printf("%i\n", element_before.number);
-    printf("%i\t%i\n", element0.pointer_to_next_element, &element_before );
+    printf("%i\n", p_element_before->number);
+    printf("%i\t%i\n", element0.pointer_to_next_element, p_element_before );
     pause();
 }
