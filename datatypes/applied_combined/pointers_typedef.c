@@ -39,6 +39,23 @@ void extending_list() {
     }
 }
 
+void sorted_insert() {
+    int value;
+    printf("\nPlease enter and integer you want to perform a serted insert on: ");
+    scanf("%i", &value);
+    element* p_current_element = &element0;
+    element* p_next_element = p_current_element->pointer_to_next_element;
+    for ( int i = 0; i < listsize; i++ ) {
+        if (p_current_element->number < value < p_next_element->number) {
+            element* p_new_element = (element*) malloc(sizeof(element));
+            p_new_element->number = value;
+            p_current_element->pointer_to_next_element = p_new_element;
+            p_new_element->pointer_to_next_element = p_next_element;
+        }
+    }
+    listsize++;
+}
+
 void loop_through_list() {
     printf("\nSTART:\t'loop_through_list'");
     element current_element = element0;
@@ -55,5 +72,7 @@ int main() {
     extending_list();
     pause();
     loop_through_list();
+    pause();
+    sorted_insert();
     pause();
 }
