@@ -16,5 +16,5 @@ int main() {
 
 //defining a function <=> saying what a function does
 float function1(float(x),float(y)) {
-     return x*y;
+    return x*y;
 }
