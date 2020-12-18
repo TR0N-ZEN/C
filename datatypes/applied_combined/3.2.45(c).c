@@ -26,21 +26,21 @@ struct Graph {
 // int e = (n-1)*(n)/2;
 // int ord[n] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, ...};
 
-void topsort(int i, int e, struct Edge edges[], int ord[]) {
+void topsort(int n, int e, struct Edge edges[], int ord[]) {
 	for (int k = 1; k <= SEARCH_BASIS; k++) {
 		//finde Element v aus V mit ord(v) = i
 		for (int j = 0; j < n; j++) {
 			//falls ord(v) == ord
-			if (ord(V[j]) == k) { ord[k] = V[j]; }
+			if (ord(graph1.vertexes[j]) == k) { ord[k] = V[j]; }
 		}
 	}
 	//first 3 elements found
 	//int ord[n] = {1, 2, 3, -1, -1, ...};
 	//für jedes Element v aus V wird nun gezählt wie oft es in einem Element edge von edges auf der rechten Seite auftaucht, das kleinste Element tauch 0 mal auf der rechten Seite auf, das n-te Element aus V n-1 mal.
 	for (int k = SEARCH_BASIS; k < n; k++) {
-		int x = V[k];
+		int x = graph1.vertexes[k];
 		int occurencies = 0;
-		for (int j = 0; j < SIZE_OF_VERTEXES; j++) {
+		for (int j = 0; j < SIZE_OF_EDGES; j++) {
 			if (edges[j].to == x) { ++occurencies; }
 		}
 		ord[occurencies] = x + 1 ; //e.g. if x has 0 occurencies it must be 0 and since the ruel that ord(v) = ord[v] => ord(0) = 1 = ord[0] 
@@ -66,4 +66,9 @@ int main() {
 			count += 1;
 		}
 	}
+	int order[SIZE_OF_VERTEXES];
+	for (int i = 0; i < SIZE_OF_VERTEXES; i++) {
+		order[i] = -1;
+	}
+	topsort(SIZE_OF_VERTEXES, SIZE_OF_EDGES, graph1.edges, int order[]);
 }
