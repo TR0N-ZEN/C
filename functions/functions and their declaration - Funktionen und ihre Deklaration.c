@@ -4,9 +4,10 @@
 
 float x,y,z;
  
-float function1(float x,float y); // function declaration <=> saying a fucntion exists but not describing what it does
+float function1(float x,float y); // function declaration <=> saying a function exists but not describing what it does
  
-int main() {
+int main()
+{
     scanf("%f",&x);
     scanf("%f",&y);
     z = function1(x,y);
@@ -15,6 +16,7 @@ int main() {
 }
 
 //defining a function <=> saying what a function does
-float function1(float(x),float(y)) {
+float function1(float(x),float(y))
+{
     return x*y;
 }
