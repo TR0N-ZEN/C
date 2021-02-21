@@ -21,7 +21,7 @@ typedef struct DATATYPE-IDENTIFIER-TO-USE-WITH-STRUCT-KEYWORD {
 */
 
 
-typedef struct students 
+typedef struct students
 {   /*struct will create an object which can be thought of as a list containing entries/variables of different datatypes, or it is considered an object like in higher languages*/
     char name[10];          /*first entry will be an array of length ten for characters and the name name which is the replacement for the indexnumber which would be the comparable aspect in an array*/
     char major[20];         /*second entry is a list of charcters with length 20 and the name major which is the replacement for the indexnumber which would be the comparable aspect in an array...how to call them will be shown*/
