@@ -28,18 +28,21 @@ void append_element(int(number)) {
 }
 
 int listsize;
-void extending_list() {
+void extending_list()
+{
     int value;
     printf("\nEnter an integer for how long your list will be for now: ");
     scanf("%i", &listsize);
-    for (int i = 0; i < listsize; i++) {
+    for (int i = 0; i < listsize; i++)
+    {
         printf("\nEnter an integer value: ");
         scanf("%i", &value);
         append_element(value);
     }
 }
 
-void sorted_insert() {
+void sorted_insert()
+{
     int value;
     printf("\nPlease enter and integer you want to perform a serted insert on: ");
     scanf("%i", &value);
@@ -56,7 +59,8 @@ void sorted_insert() {
     listsize++;
 }
 
-void loop_through_list() {
+void loop_through_list()
+{
     printf("\nSTART:\t'loop_through_list'");
     element current_element = element0;
     for ( int i =  0; i < listsize; i++) {
@@ -66,7 +70,8 @@ void loop_through_list() {
     printf("\nEND:\t'loop_through_list'");
 }
 
-int main() {
+int main()
+{
     element0.number = 0;
     p_element_before = &element0;
     extending_list();

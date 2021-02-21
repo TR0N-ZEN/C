@@ -5,11 +5,12 @@
 
 typedef int feld[10];
 
-typedef feld* pointer_to_feld; // Pointer_to_feld is a pointer to the first memory cell holding the feld
+typedef feld* pointer_to_feld; // pointer_to_feld is a pointer to the first memory cell holding a feld
 
 pointer_to_feld a;
 
-void pause() {
+void pause()
+{
     printf ( "\nPress [Enter] to continue..." );
     //fflush ( stdout );
     //getchar();
@@ -17,13 +18,10 @@ void pause() {
     scanf("%c", &c1);
 }
 
-int main() {
+int main()
+{
     a = (pointer_to_feld) malloc(sizeof(feld));
-    for (int i = 0; i < 10; i++) {
-        (*a)[i] = i+1;
-    }
-    for (int i = 0; i < 10; i++) {
-        printf("\n%i", (*a)[i]);
-    }
+    for (int i = 0; i < 10; i++) { (*a)[i] = i+1; }
+    for (int i = 0; i < 10; i++) { printf("\n%i", (*a)[i]); }
     pause();
 }
