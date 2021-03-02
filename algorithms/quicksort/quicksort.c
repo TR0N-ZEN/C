@@ -13,13 +13,26 @@ pointer_to_list quicksort(pointer_to_list pointer_to_list, int length)
 {
     int pivot_index = length/2; //length = 2*pivot_index || length = 2*pivot_index + 1
     int pivot_element = list[pivot_index];
+    Node smaller[length-1];
+    Node bigger[length-1];
     int i = j = 0;
     for(int a = 0; a < length; a++)
     {
-        if (pivot_element < list[a]) { bigger[i]; i++; }
-        else { smaller[j]; j++; }
+        if (pivot_element < list[a]) {
+            bigger[i];
+            if (i > 0) { bigger[i-1].next = &bigger[i]; }
+            i++;
+        }
+        else
+        {
+            smaller[j];
+            if (j > 0) { smaller[j-1].next = &smaller[j]; }
+            j++;
+        }
     }
-    trim_list();
+    quicksort(&smaller[0], j+1);
+    quicksort(&bigger[0], i+1);
+    return j+1; // index/depth of the pivot element since there are j smaller items
 }
 */
 
