@@ -11,7 +11,7 @@ int idx(Node node, int depth)
 {
     if (depth == 0) { return node.value; }
     --depth;
-    Node next_node = *(node.next);
+    Node next_node = *(node.next); // *(node.next) <=> node->next oder?
     return idx(next_node, depth);
 }
 
@@ -31,7 +31,7 @@ int main()
     }
     for (int a = 0; a < b; a++)
     {
-        printf("%i %i \n", nodelist[a].value, (*nodelist[a].next).value);
+        printf("%i %i \n", nodelist[a].value, (*nodelist[a].next).value); // (*nodelist[a].next).value <=> (nodelist[a]->next).value
     }
     printf("%i", idx(nodelist[1], 2));
 }
