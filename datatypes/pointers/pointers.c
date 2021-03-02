@@ -5,7 +5,7 @@
 
 int a = 20; /*the varible type is int (integer)*/
 int* b = &a; /*the variable type is int* meaning it is a pointer to an integer, not an integer which would be typedefined by simply int*/
-int string_recovery(); // Declared but not defined/initialised. But since it is declared it can be called although it isnt defined/initialised.
+void string_recovery(); // Declared but not defined/initialised. But since it is declared it can be called although it isnt defined/initialised.
 
 void pause()
 {
@@ -67,14 +67,14 @@ void string_recovery()
     for (int x = 0; x < 10; x++)
     {
         pointerarray[x] = pointer_on_string;
-        pointer_on_string++;
+        pointer_on_string++; // jumping to next ( octet | byte ) so the next symbol probably encoded as utf-8
         printf("%d\n",pointer_on_string);
     };
-    char* pointer_to_char;
+    char* pointer_to_char = NULL;
     char text[10]; /* ( array | list ) of characters with space for 10 charcters*/
     for (int x = 0; x < 10; x++)
     {
-        pointer_to_Char = pointerarray[x];
+        pointer_to_char = pointerarray[x];
         text[x] = *pointer_to_char; /*the * before the variable name the decodation of the variable, which has to be of type pointer, and throws out the value that is stored in the address the pointer contained/
         /*the variable called pointer is used as a transmitter which can be dereferenced with the *;
          in the end the arrays string[10] and text[10] should be the same*/
