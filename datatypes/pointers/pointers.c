@@ -23,7 +23,7 @@ void pause()
 
 int give_a() { return a; }
 
-int* give_pointer_a() { return &a; }
+int* give_pointer_to_a() { return &a; }
 
 int* give_pointer_b() { return b; }
 
@@ -33,7 +33,7 @@ void pointer_demo()
 {
     printf("START:\t'pointer_demo'");
     printf("value(a)\tmemory address(a)\tmemory address(b)\tvalue(b)\n");
-    printf("%d\t\t%x\t\t\t%x\t\t\t%d\n", give_a(), give_pointer_a(), give_pointer_b(), give_value_pointer_b_points_at());
+    printf("%d\t\t%x\t\t\t%x\t\t\t%d\n", give_a(), give_pointer_to_a(), give_pointer_b(), give_value_pointer_b_points_at());
     printf("END:\t'pointer_demo'");
 }
 
@@ -56,9 +56,8 @@ void string_recovery()
     printf("START:\t'string_recovery'");
     char string[10]; /* ( array | list ) of characters with space for 10 charcters*/
     char* pointerarray[10]; /* ( array | list ) of ( memory address | pointer )s to characters with space for 10 of such*/
-    //Get user input.
     printf("Type sth. 10 characters long: ");
-    scanf("%s", string);
+    scanf("%s", string); //Get user input.
     printf("String you typed (red via 'string'):\t%s\n", string);
     printf("Memory address (red via '&string[0]') is:\t%x\n", &string[0]);
     char* pointer_on_string = &string[0]; //( memory address | pointer ) to the first memory address holding ( a part | first element | first character ) of string[0]
