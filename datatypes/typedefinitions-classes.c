@@ -56,8 +56,7 @@ int main()
         //Do u want to make another entry?
         printf("Enter further students? y/n:\t");
         scanf("%s", yesno);
-        if (strcmp(yesno, "n") == 0) { break; } //'break;' jumps out of the currently enclosing loop
-        else { ++number; } //number at its highpoint is gonna be as big as the index of the last object in studentlist -> important for listing later
+        if (strcmp(yesno, "n") == 0) { break; } //'break;' jumps out of the currently enclosing loop, so in this case the enclosing while loop
         //Getting user input.
         printf("name:\t");
         scanf("%s", name);
@@ -65,16 +64,17 @@ int main()
         scanf("%s", major);
         printf("gpa:\t");
         scanf("%f", &gpa);
-        //Saving userinput.
+        //Saving userinput to the array studentlist.
         studentlist[number];
         strcpy(studentlist[number].name, name);
         strcpy(studentlist[number].major, major);
         studentlist[number].number = number;
         studentlist[number].gpa = gpa;
+        ++number;
     }
     //Listing entries.
     printf("name\tnumber\tmajor\t\tgpa\n");
-    for (int counter = 0; counter <= number; counter++)
+    for (int counter = 0; counter < number; counter++)
     {
         printf("%s\t%i\t%s\t%f\n", studentlist[counter].name, studentlist[counter].number, studentlist[counter].major, studentlist[counter].gpa);
     }
