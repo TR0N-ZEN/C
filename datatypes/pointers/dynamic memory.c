@@ -3,11 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef int feld[10]; // feld is now a datatype datatype and defined as an array holding 10 integer values
+typedef int sixPack[6]; // sixPack is now a datatype datatype and defined as an array holding 6 integer values
 
-typedef feld* pointer_to_feld; // pointer_to_feld is now a datatype and defined as a pointer to the first memory cell holding a feld
+typedef sixPack* pointer_to_sixPack; // pointer_to_sixPack is now a datatype and defined as a pointer to the first memory cell holding a sixPack
 
-pointer_to_feld a; //declared variable a as of type pointer_to_feld
+pointer_to_sixPack a; //declared variable a as of type pointer_to_sixPack
 
 void pause()
 {
@@ -20,7 +20,7 @@ void pause()
 
 int main()
 {
-    a = (pointer_to_feld) malloc(sizeof(feld)); // malloc(<int>) reserves the amount of bits/bites (not sure but i think bytes) given as int and returns the leading memory address of the reserved memory block, so basically a pointer
+    a = (pointer_to_sixPack) malloc(sizeof(sixPack)); // malloc(<int>) reserves the amount of bytes given as int and returns the leading memory address of the reserved memory block, so basically it returns a pointer
     for (int i = 0; i < 10; i++) { (*a)[i] = i+1; }
     for (int i = 0; i < 10; i++) { printf("\n%i", (*a)[i]); }
     pause();
