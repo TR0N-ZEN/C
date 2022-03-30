@@ -1,5 +1,10 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+
 
 // pid_t wait(int *x);
 // the argument (x) is a pointer to an integer
@@ -13,12 +18,13 @@ int main()
   pid = fork(); // because of fork the execution of the enclosing code block doubles so the code is run once for the parent and once for the child
   if (pid == 0) // child process
   {
-    return 13; // exit status from child process is 13
+    int x = 1;
+    return x; // exit status(/return value) from child process is the integer 13
   }
   else // parent process
   {
     wait(&rv); // &rv is a pointer to a memoryaddress where an integer is saved
-    printf("In parent process: exit status from child is in decimal %d, in hexadecimal %0x\n", rv, rv);
+    printf("Exit status from child was:\n\t%d (in decimal)\n\t%0x (in hexadecimal)\n", rv, rv);
   }
   return 0;
 }
