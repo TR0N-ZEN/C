@@ -4,10 +4,8 @@
 
 int main()
 {
-    /* definiere first_name */
-    char* first_name = "John";
-    /* definiere last_name */
-    char last_name[] = "Doe";
+    char* first_name = "John"; /* definiere first_name */
+    char last_name[] = "Doe"; /* definiere last_name */
     char name[100];
     if (strncmp(first_name, "John", 4) == 0) { printf("first_name right\n"); };
     if (strncmp(last_name, "Doe", 3) == 0) { printf("last_name right\n"); };
