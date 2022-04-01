@@ -8,15 +8,15 @@ float function1(float x,float y); // function declaration <=> saying a function 
  
 int main()
 {
-    scanf("%f",&x);
-    scanf("%f",&y);
-    z = function1(x,y);
-    printf("%f",z);
-    return 0;
+  scanf("%f",&x);
+  scanf("%f",&y);
+  z = function1(x,y);
+  printf("%f",z);
+  return 0;
 }
 
 //defining a function <=> saying what a function does
 float function1(float(x),float(y))
 {
-    return x*y;
+  return x*y;
 }
