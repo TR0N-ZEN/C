@@ -10,6 +10,7 @@
 // the argument (x) is a pointer to an integer
 // returns the pid of the terminated child process and
 // saves the exit status (/return value) of the child process in the memory cell that was given as argument to wait
+// waits for the 
 
 int main()
 {
