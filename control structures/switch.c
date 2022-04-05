@@ -9,16 +9,6 @@ int main()
   scanf("%i",&x);
   printf("\n");
   
-  if(x == 1)
-  {
-    printf("You typed %i.\n",x);
-  }
-  else
-  {
-    printf("Apparrently not 1.\n(You typed %i instead).\n",x);
-  }
-  printf("\n");
-  
   switch(x)
   {
     case 1: printf("You typed 1\n"); break;
