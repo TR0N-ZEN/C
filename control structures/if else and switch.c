@@ -2,20 +2,25 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(){
+int main()
+{
   printf("Enter one integer from 1 to 6: ");
   int x;
   scanf("%i",&x);
   printf("\n");
   
-  if(x == 1){
+  if(x == 1)
+  {
     printf("You typed %i.\n",x);
-  }else{
+  }
+  else
+  {
     printf("Apparrently not 1.\n(You typed %i instead).\n",x);
   }
   printf("\n");
   
-  switch(x){
+  switch(x)
+  {
     case 1: printf("You typed 1\n"); break;
     case 2: printf("You typed 2\n"); break;
     case 3: printf("You typed 3\n"); break;
