@@ -19,3 +19,14 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 ```bash
 sudo apt install gcc
 ```
+
+# compile on Linux
+```bash
+# compile source files
+gcc -c foo.c
+gcc -c main.c
+
+# link the object files to one executable
+gcc -o executable_file foo.o main.o
+
+```

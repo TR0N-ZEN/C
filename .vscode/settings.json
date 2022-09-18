@@ -1,3 +1,7 @@
 {
-  "C_Cpp.errorSquiggles": "Enabled"
+  "C_Cpp.errorSquiggles": "Disabled",
+  "files.associations": {
+    "stdbool.h": "c",
+    "double_concatenated_list copy.h": "c"
+  }
 }
