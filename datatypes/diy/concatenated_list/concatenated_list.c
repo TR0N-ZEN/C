@@ -26,7 +26,7 @@ typedef struct elements {
 
 
 // global variables
-    
+
     // declaration of the first element 
     element first_element;
 
@@ -45,13 +45,13 @@ element* next(element* pointer_to_element) {
 void append(int(number)) {
     // reserve memory for the new element
     element* pointer_to_new_element = (element*) malloc(sizeof(element));
-    
+
     // assign a number to the new element
     pointer_to_new_element->number = number;
-    
+
     // assign a NULL pointer since latest element has no sucsessor
     pointer_to_new_element->pointer_to_next_element = NULL;
-    
+
     pointer_to_element_before->pointer_to_next_element = pointer_to_new_element;
     pointer_to_element_before = pointer_to_new_element;
 }
@@ -106,4 +106,3 @@ int main() {
     sorted_insert();
     pause();
 }
-

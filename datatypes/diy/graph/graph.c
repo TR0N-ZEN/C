@@ -1,7 +1,4 @@
-#include <stdio.h>
 #include <stdbool.h>
-#include <stdlib.h>
-#include <string.h>
 
 #define SEARCH_BASIS 3
 #define SIZE_OF_VERTEXES 10

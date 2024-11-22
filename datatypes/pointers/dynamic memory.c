@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include <string.h>
 
 typedef int sixPack[6]; // sixPack is now a datatype datatype and defined as an array holding 6 integer values
 

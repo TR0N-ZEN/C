@@ -1,7 +1,4 @@
-#include <stdio.h>
 #include <stdbool.h>
-#include <stdlib.h>
-#include <string.h>
 
 // the defined datatype tree is just a pointer to a node
 // where node is structured datatype defined later
@@ -42,4 +39,3 @@ int main()
 
   return 0;
 }
-

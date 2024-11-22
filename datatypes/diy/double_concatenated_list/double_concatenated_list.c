@@ -56,14 +56,14 @@ void insert_before(element* element_after, element* insert_element) {
 void append(int(number), list* pointer_to_list) {
     // reserve memory for the new element
     element* pointer_to_new_element = (element*) malloc(sizeof(element));
-    
+
     // assign a number to the new element
     pointer_to_new_element->number = number;
-    
+
     // assign a NULL pointer since latest element has no sucsessor
     pointer_to_new_element->pointer_to_next_element = NULL;
     pointer_to_new_element->pointer_to_previous_element = pointer_to_list->pointer_to_last_element;
-    
+
     // forelast element gets pointer to the new element
     pointer_to_list->pointer_to_last_element->pointer_to_next_element = pointer_to_new_element;
 
