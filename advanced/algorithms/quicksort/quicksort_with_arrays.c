@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+// compile in debug mode
+//   gcc -g -o quicksort_with_arrays.o quicksort_with_arrays.c
+// run with debugger
+//   gdb ./quicksort_with_arrays.o
+
 int sorted[9];
 
 /*

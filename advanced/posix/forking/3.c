@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
 
@@ -16,16 +14,18 @@ int main ()
   pid_t pid, pidOfThisProcess, ppidOfThisProcess;
   pid = getpid();
   printf("This ist the parent process before calling fork() the process id is %d\n", pid);
-  // fork() executed in the parent process returns the PID of the child process, 
+  // fork() executed in the parent process returns the PID of the child process,
   // fork() executed in the child process returns 0
   // fork() returns a negative integer if an error occured
-  char halt[20]; // not shared shared between processes
+  char halt[20]; // not shared between processes
   printf("Press any key and enter to continue(1)...\n");
   scanf("%s", halt);
   pid = fork();
-  // the following two lines cause strange behaviour because of inputs and outputs of the two processes attached to the terminal you start the programm from
+  // the following two lines cause strange behaviour because
+  //    of inputs and outputs of the two processes attached to the terminal you start the programm from
   // printf("Press any key and enter to continue(2)...\n");
-  // scanf("%s", halt); // this seemingly gets executed in the parent process only, maybe it is executed in the child process but not waitning for input
+  // scanf("%s", halt); // this seemingly gets executed in the parent process only, maybe
+  //    it is executed in the child process but not waiting for input
   if (pid < 0)
   {
     perror("fork() failure\n");

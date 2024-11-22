@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -10,13 +8,15 @@
 // the argument (x) is a pointer to an integer
 // returns the pid of the terminated child process and
 // saves the exit status (/return value) of the child process in the memory cell that was given as argument to wait
-// waits for the 
+// waits for the child process to exit
 
 int main()
 {
   int pid;
   int rv;
-  pid = fork(); // because of fork the execution of the enclosing code block doubles so the code is run once for the parent and once for the child
+  pid = fork(); // because of fork the execution of the enclosing
+                // code block doubles so the code is run once for
+                // the parent and once for the child
   if (pid == 0) // child process
   {
     int x = 1;

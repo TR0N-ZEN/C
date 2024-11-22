@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -29,5 +27,9 @@ int main ()
   }
 }
 
-// resumee: a CHILD can use variables from the PARENT and change them in their own scope but can't change the value in the scope of the PARENT
-
+// resumee:
+//  a CHILD can use variables from the PARENT and change them
+//  in their own scope but can't change the value in the
+//  scope of the PARENT
+//  so at the time of their creation they get a copy of the
+//  parents data
