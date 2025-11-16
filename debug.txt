@@ -1,0 +1,22 @@
+======
+debug
+======
+
+how to start gdb
+  https://sourceware.org/gdb/current/onlinedocs/gdb#Getting-In-and-Out-of-GDB
+
+
+compile for debugging
+
+  gcc -g -o ./${NAME}.debug.o ${NAME}.c
+
+read furhter at
+  https://sourceware.org/gdb/current/onlinedocs/gdb#Compiling-for-Debugging
+
+
+run with debugger
+  gdb ./${NAME}.debug.o
+
+further information at
+  https://sourceware.org/gdb/current/onlinedocs/gdb#Stopping-and-Continuing
+  https://sourceware.org/gdb/current/onlinedocs/gdb#Breakpoints
