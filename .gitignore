@@ -2,3 +2,5 @@
 .vs
 *.o
 *.a
+*.xopp
+*.vim
