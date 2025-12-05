@@ -12,10 +12,10 @@ int sorted[9];
  * Parameters:
  *   list: pointer to the first element of a list of integers
  *   length: length of list
- *   offset: number of smaller numbers inside the whole recursion
+ *   offset: number of smaller numbers inside the array given to the root function call of the recursion on `quicksort(...)`
  */
 void quicksort(
-    int *list, 
+    int *list,
     int length,
     int offset
 )
@@ -45,17 +45,21 @@ void quicksort(
     value = list[a];
     value_is_bigger = pivot_value<value;
     value_is_smaller = pivot_value>value;
-    bigger[max_index*!value_is_bigger + i*value_is_bigger] = value;
-    i += value_is_bigger;
-    smaller[max_index*!value_is_smaller + j*value_is_smaller] = value;
-    j += value_is_smaller;
+    bigger[  !value_is_bigger*max_index       // If `value` is not bigger, set the index to `max_index`
+           + value_is_bigger*i ]              // or if `value` is bigger, set the index to `i`.
+      = value;                                // Put the value into the array `smaller` at the index set in the previous two lines.
+
+    i += value_is_bigger;                     // If `value` is bigger, increase the displacement for
+                                              // insertion in to the array named `bigger`.
+
+    smaller[  !value_is_smaller*max_index     // If `value` is not smaller, set the index to `max_index`
+            + value_is_smaller*j ]            // or if `value` is smaller, set the index to `j`.
+      = value;                                // Put the value into the array `smaller` at the index set in the previous two lines.
+
+    j += value_is_smaller;                    // If the value is smaller, increase the displacement
+                                              // for insertion in to the array named `smaller`.
   }
   sorted[offset+j] = pivot_value;
-
-  // print list given as output, DELETE ME (this paragraph)
-  printf("[ %i, ", sorted[0]);
-  for (int a = 1; a < 8; a++) { printf("%i, ", sorted[a]); }
-  printf("%i ]\n", sorted[8]);
 
   quicksort(bigger,i,offset+j+1);
   quicksort(smaller,j,offset);
@@ -66,7 +70,7 @@ void quicksort(
 int main ()
 {
   int list_length = 9;
-  int list[] = {1,2,3,5,4,6,7,8,9};
+  int list[] = {6,1,7,5,4,9,3,8,2};
 //  for (int a = 1; a < list_length; a++)
 //  {
 //    printf("Waiting for input of number %i: ", a);
